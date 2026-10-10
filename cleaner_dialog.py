@@ -36,12 +36,13 @@ YES = _enum(QMessageBox, ("StandardButton", "Yes"), "Yes")
 LARGE_FIELD_WARNING = 5000  # distinct values
 
 
+# QVariant.String exists on Qt5 builds only, so look it up without assuming it.
+_STRING_TYPE = getattr(QVariant, "String", None) if QVariant is not None else None
+
+
 def _is_text_field(field):
-    try:
-        if field.type() == QVariant.String:
-            return True
-    except Exception:
-        pass
+    if _STRING_TYPE is not None and field.type() == _STRING_TYPE:
+        return True
     name = field.typeName().lower()
     return any(word in name for word in ("char", "text", "string"))
 
