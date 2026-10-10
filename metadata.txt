@@ -1,0 +1,15 @@
+[general]
+name=Value Cleaner
+qgisMinimumVersion=3.28
+description=Find and fix inconsistent spellings in a text field: stray spaces, mixed case, punctuation and small typos.
+version=0.1.0
+author=Lawal Lawal Adeniran
+email=lawalade2@gmail.com
+about=Value Cleaner groups values in a text field that are really the same thing written differently, for example "Kaduna", "kaduna " and "Kadunna". It shows each group with feature counts and proposes the most common spelling as the correct one, which you can change. Values containing different numbers (Zone 1 and Zone 2) are never grouped. Apply the fixes to a new layer, leaving the original untouched, or edit the layer in place as a single undo step. Useful for any data that was typed by hand, collected in the field or merged from several sources.
+category=Vector
+tags=cleaning,data quality,attribute,standardize,typos,duplicates,text,spelling
+tracker=https://github.com/lawgis/ValueCleaner/issues
+repository=https://github.com/lawgis/ValueCleaner
+homepage=https://github.com/lawgis/ValueCleaner
+experimental=False
+icon=icon.svg
